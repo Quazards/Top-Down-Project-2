@@ -10,7 +10,7 @@ Developed by: Quazards
 
 ## Description
 Genre: Top-Down Shooter
-Swarmed is a 2D Top-Down Shooter game where the player is tasked to survive the onslaught of enemies. The player is equipped with a gun that can shoot bullets that can help them survive.
+Swarmed is a 2D Top-Down Shooter game where the player is tasked to survive the swarm of enemies. The player is equipped with a gun that can shoot bullets that can help them survive.
 <br>
 
 ##  📜Scripts and Features
