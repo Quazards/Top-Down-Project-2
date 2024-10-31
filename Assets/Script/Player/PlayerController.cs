@@ -84,4 +84,9 @@ public class PlayerController : MonoBehaviour
             }
             else return false;
     }
+
+    public void playerDeath()
+    {
+        animator.SetTrigger("playerDeath");
+    }
 }

@@ -6,7 +6,7 @@ public class EnemyController : MonoBehaviour
 {
     public Transform player;
     public float enemySpeed = 0.3f;
-    public int enemyHealth = 200;
+    private Animator animator;
 
     private SpriteRenderer enemySprite;
     private bool isFacingLeft;
@@ -15,10 +15,12 @@ public class EnemyController : MonoBehaviour
     {
         enemySprite = GetComponent<SpriteRenderer>();
         player = FindAnyObjectByType<PlayerController>().transform;
+        animator = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
     {
+
         transform.position = Vector2.MoveTowards(transform.position, player.position, enemySpeed * Time.fixedDeltaTime);
         FlipSprite();
     }
@@ -44,29 +46,13 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private void TakeDamage(int damage)
+    public void EnemyDeath()
     {
-        enemyHealth -= damage;
-
-        if(enemyHealth <= 0)
-        {
-            Destroy(gameObject);
-        }
+        animator.SetTrigger("enemyDeath");
     }
 
-    private IEnumerator FlashRed()
+    private void RemoveEnemy()
     {
-        enemySprite.color = Color.red;
-        yield return new WaitForSecondsRealtime(0.5f);
-        enemySprite.color = Color.white;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.CompareTag("Bullet"))
-        {
-            TakeDamage(collision.GetComponent<Bullet>().damage);
-            StartCoroutine(FlashRed());
-        }
+        Destroy(gameObject);
     }
 }

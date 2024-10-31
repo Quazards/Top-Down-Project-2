@@ -17,7 +17,8 @@ public class Bullet : MonoBehaviour
     {
         if(collision.CompareTag("Enemy"))
         {
-            Debug.Log("Bullet is destroyed");
+            var health = collision.GetComponent<Health>();
+            health.TakeDamage(damage);
             Destroy(gameObject);
         }
     }
