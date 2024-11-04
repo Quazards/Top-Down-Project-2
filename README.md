@@ -21,7 +21,7 @@ Swarmed is a 2D Top-Down Shooter game where the player is tasked to survive the 
 | ------------------- | ------------------------------------------------------------ |
 | `EnemyController.cs` | Handles the enemy's behaviours and stats |
 | `PlayerController.cs` | Handles the player's movement and input |
-| `Bullet.cs`  | Handles the bullet's logic |
+| `InvincibilityController.cs`  | Handles the invincibility timing after an entity takes damage |
 | `Shooting.cs`  | Handles the shooting mechanic logic |
 | `etc`  | |
 
